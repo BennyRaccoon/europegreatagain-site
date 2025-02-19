@@ -20,8 +20,8 @@ export default async function handler(req, res) {
         },
       ],
       mode: 'payment',
-      success_url: `${process.env.NEXT_PUBLIC_DOMAIN}?success=true`,
-      cancel_url: `${process.env.NEXT_PUBLIC_DOMAIN}?canceled=true`,
+      success_url: `https://www.europegreatagain.net?success=true`,
+      cancel_url: `https://www.europegreatagain.net?canceled=true`,
     });
 
     res.status(200).json({ url: session.url });
