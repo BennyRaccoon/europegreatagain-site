@@ -7,15 +7,17 @@ export default function Home() {
   const handleCheckout = async () => {
     setLoading(true);
     try {
-      // 🔥 Make a POST request to `/api/create-checkout-session`
+      // ✅ Ensure we are sending a POST request
       const response = await fetch("/api/create-checkout-session", {
         method: "POST",
+        headers: { "Content-Type": "application/json" },
       });
 
-      // 🔥 Redirects immediately (handled by the API)
-      if (response.redirected) {
-        window.location.href = response.url;
+      if (response.ok) {
+        const data = await response.json();
+        window.location.href = data.url; // Redirect manually
       } else {
+        console.error("Invalid response:", response.status);
         setLoading(false);
       }
     } catch (error) {
@@ -29,7 +31,7 @@ export default function Home() {
       <h1>Welcome to MEGA Store</h1>
       <p>Buy the best MEGA Hat now!</p>
       <button onClick={handleCheckout} disabled={loading}>
-        {loading ? "Redirecting..." : "Buy Now"}
+        {loading ? "Processing..." : "Buy Now"}
       </button>
     </div>
   );
