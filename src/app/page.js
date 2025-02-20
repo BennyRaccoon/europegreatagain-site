@@ -45,16 +45,16 @@ export default function Home() {
   };
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       {/* Title Section */}
-      <section className={styles.titleSection}>
+      <section className="titleSection">
         <h1>
           MAKE EUROPE <br /> GREAT AGAIN
         </h1>
       </section>
 
       {/* Looping Image Section */}
-      <section className={styles.imageSection}>
+      <section className="imageSection">
         {images.map((src, index) => (
           <Image
             key={index}
@@ -62,22 +62,22 @@ export default function Home() {
             alt="MEGA Figure"
             layout="fill"
             objectFit="cover"
-            className={`${styles.image} ${index === currentImage ? styles.visible : styles.hidden}`}
+            className={`${index === currentImage ? "visible" : "hidden"}`}
           />
         ))}
       </section>
 
       {/* Call to Action */}
-      <section className={styles.ctaSection}>
+      <section className="ctaSection">
         <h2>Get your MEGA hat now</h2>
         <Image src="/real-hat.png" alt="MEGA Hat" width={300} height={300} />
-        <button onClick={handleCheckout} disabled={loading} className={styles.ctaButton}>
+        <button onClick={handleCheckout} disabled={loading} className="ctaButton">
           {loading ? "Processing..." : "Buy Now"}
         </button>
       </section>
 
       {/* Footer */}
-      <footer className={styles.footer}>
+      <footer className="footer">
         <p>© 2025 The Bun Cult. All Rights Reserved.</p>
       </footer>
     </div>
