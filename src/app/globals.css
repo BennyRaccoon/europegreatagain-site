@@ -50,10 +50,13 @@ a {
 
 /* 🔹 Title Section */
 .titleSection h1 {
-  font-size: 4rem;
-  color: var(--color-primary-gold);
+  font-size: 3rem;
+  color: white;
   text-transform: uppercase;
   margin: 50px 0;
+  font-weight: normal;
+  color: white;
+  line-height: 3rem;
 }
 
 /* 🔹 Looping Image Section */
@@ -91,18 +94,53 @@ a {
 }
 
 .ctaButton {
-  background-color: var(--color-accent-burnt-orange);
+  background: linear-gradient(135deg, var(--color-accent-burnt-orange), var(--color-primary-gold));
   color: var(--color-text-light);
   border: none;
-  padding: 15px 30px;
-  font-size: 1.5rem;
-  margin-top: 20px;
+  padding: 15px 40px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3);
 }
 
+/* 🔥 Neon Hover Effect */
 .ctaButton:hover {
-  background-color: var(--color-primary-gold);
+  background: var(--color-primary-gold);
+  color: var(--color-bg-dark);
+  box-shadow: 0 0 20px var(--color-primary-gold);
+  transform: scale(1.05);
+}
+
+/* ✨ Button Glow Animation */
+.ctaButton::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--color-accent-neon-cyan), var(--color-primary-gold));
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.ctaButton:hover::before {
+  opacity: 1;
+}
+
+/* 🔥 Click Effect */
+.ctaButton:active {
+  transform: scale(0.98);
+  box-shadow: 0 0 10px var(--color-primary-gold);
 }
 
 /* 🔹 Footer */
