@@ -13,6 +13,9 @@ export default async function handler(req, res) {
 
   try {
     const session = await stripe.checkout.sessions.create({
+      shipping_address_collection: {
+        allowed_countries: ['AT', 'BE', 'CH', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GR', 'HU', 'IS', 'IT', 'LI', 'LT', 'LU', 'LV', 'MT', 'NL', 'NO', 'PL', 'PT', 'SE', 'SI', 'SK' ]
+      },
       line_items: [
         {
           price: process.env.STRIPE_PRICE_ID, // Use env variable for price ID
@@ -20,8 +23,8 @@ export default async function handler(req, res) {
         },
       ],
       mode: 'payment',
-      success_url: `https://www.europegreatagain.net?success=true`,
-      cancel_url: `https://www.europegreatagain.net?canceled=true`,
+      success_url: `https://www.europegreatagain.net/success`,
+      cancel_url: `https://www.europegreatagain.net?canceled=true`
     });
 
     res.status(200).json({ url: session.url });

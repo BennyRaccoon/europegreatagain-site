@@ -1,4 +1,4 @@
-import { EB_Garamond } from "next/font/google";
+import { EB_Garamond, Lexend } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
 
@@ -8,18 +8,24 @@ const ebGaramond = EB_Garamond({
   display: "swap",
 });
 
+const lexend = Lexend({
+  subsets: ["latin"],
+  variable: "--font-lexend",
+  display: "swap",
+});
+
 export const metadata = {
   title: "Make Europe Great Again - Official MEGA Merch",
   description: "Official MEGA Store - Make Europe Great Again with high-quality apparel and accessories.",
   keywords: "MEGA, Make Europe Great Again, European apparel, historical merch, crusader merch",
   author: "The Bun Cult",
-  siteUrl: "https://europegreatagain.net", // Update with your actual domain
-  socialImage: "/mega-store-banner.jpg", // Update with your OG image
+  siteUrl: "https://europegreatagain.net",
+  socialImage: "/mega-store-banner.png"
 };
 
 export default function RootLayout({ children }) {
   return (
-     <html lang="en">
+     <html lang="en" className={lexend.variable}>
       <Head>
         {/* SEO Meta Tags */}
         <meta name="description" content={metadata.description} />
@@ -47,10 +53,10 @@ export default function RootLayout({ children }) {
             "@type": "Organization",
             "name": "The Bun Cult",
             "url": metadata.siteUrl,
-            "logo": metadata.siteUrl + "/images/logo.png",
+            "logo": metadata.siteUrl + "/logo.png",
             "sameAs": [
               "https://www.instagram.com/thebuncult",
-              "https://twitter.com/thebuncult",
+              "https://x.com/theBuncult",
               "https://www.tiktok.com/@thebuncult"
             ]
           })

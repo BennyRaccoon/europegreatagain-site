@@ -8,7 +8,7 @@
   --color-accent-burnt-orange: #D16F2F; /* Warmer contrast for CTA buttons */
 
   /* 🎨 Background & Text Colors */
-  --color-bg-dark: #121212; /* Dark, premium background */
+  --color-bg-dark: #0A1F44; /* Dark, premium background */
   --color-text-light: #E5E5E5; /* Soft gray for text */
 }
 
@@ -16,7 +16,20 @@
 body {
   background-color: var(--color-bg-dark);
   color: var(--color-text-light);
+  font-family: 'Lexend';
+}
+
+h1 {
   font-family: 'EB Garamond';
+}
+
+h2 {
+  margin: 40px auto 20px;
+}
+
+footer {
+  margin: 60px auto 15px;
+  font-size: 10px;
 }
 
 h1, h2, h3 {
@@ -45,7 +58,6 @@ a {
 
 .container {
   text-align: center;
-  font-family: var(--font-eb-garamond);
 }
 
 /* 🔹 Title Section */
@@ -59,6 +71,78 @@ a {
   line-height: 3rem;
 }
 
+main {
+  background-color: var(--color-text-light);
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.reviews,
+.faqs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.neon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 30px;
+  padding: 15px;
+  border-radius: 30px;
+  font-size: 14px;
+  border: 2px solid #00ffcc;
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+  text-shadow: 0 0 2px #00ffcc;
+  background: rgba(0, 255, 204, 0.1);
+}
+
+.neon-pink-box {
+  flex: 50% 1 1;
+  color: white;
+  padding: 15px;
+  border-radius: 30px;
+  font-size: 14px;
+  border: 2px solid #ff00bf;
+  box-shadow: 0 0 6px #ff00bf, 0 0 12px #ff00bf, 0 0 24px #ff00bf;
+  text-shadow: 0 0 1px #ff00bf;
+  background: rgba(0, 255, 204, 0.1);
+}
+
+.neon-cyan-box {
+  flex: 50% 1 1;
+  color: white;
+  padding: 15px;
+  border-radius: 30px;
+  font-size: 14px;
+  border: 2px solid #00fbff;
+  box-shadow: 0 0 6px #00fbff, 0 0 12px #00fbff, 0 0 24px #00fbff;
+  text-shadow: 0 0 1px #00fbff;
+  background: rgba(0, 255, 204, 0.1);
+}
+
+.usp-box {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 15px;
+  flex: 100% 1 1;
+  align-items: center;
+}
+
+.usp-box > p {
+  text-align: left;
+}
+
 /* 🔹 Looping Image Section */
 .imageSection {
   position: relative;
@@ -66,7 +150,15 @@ a {
   height: 400px;
   overflow: hidden;
   max-width: 300px;
-  margin: auto;
+  min-width: 300px;
+}
+
+.frame {
+  position: absolute;
+  z-index: 2;
+  top: -50px;
+  left: -75px;
+  width: calc(100% + 150px);
 }
 
 .imageSection img {
@@ -74,7 +166,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 1.5s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 .hidden {
@@ -87,12 +179,27 @@ a {
 
 /* 🔹 CTA Section */
 .ctaSection {
-  margin: 50px 0;
+  max-width: 100%;
+  width: 600px;
+  margin-bottom: 30px;
 }
 
 .ctaSection h2 {
   font-size: 2rem;
-  color: var(--color-text-light);
+}
+
+.ctaSection .description {
+  max-width: 360px;
+  text-align: center;
+  margin: auto;
+}
+
+.ctaSection p {
+  color: var(--color-primary-dark-blue);
+}
+
+.ctaSection img {
+  margin: -50px;
 }
 
 .ctaButton {
@@ -152,4 +259,57 @@ a {
   background: var(--color-primary-dark-blue);
   color: var(--color-text-light);
   font-size: 0.9rem;
+}
+
+.framed {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  /* … */
+  .neon-pink-box,
+  .neon-cyan-box {
+    flex: calc(50% - 30px) 0 1;
+  }
+
+}
+
+@media (max-width: 900px) {
+  /* … */
+  main {
+    flex-direction: column;
+  }
+  .ctaSection img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .neon-box {
+    flex-direction: column;
+  }
+
+  .frame {
+    max-width: 400px;
+    left: calc(50% - 150px);
+    margin: 0 -50px;
+  }
+
+  .imageSection {
+    margin: auto;
+  }
+
+  section {
+    padding: 0 30px;
+  }
+
+  footer {
+    margin-bottom: 100px;
+  }
+}
+
+
+@media (min-width:500px) and (max-width:900px) {
+  .ctaSection {
+    margin: 30px auto;
+  }
 }
