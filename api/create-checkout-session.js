@@ -19,6 +19,11 @@ export default async function handler(req, res) {
       line_items: [
         {
           price: process.env.STRIPE_PRICE_ID, // Use env variable for price ID
+          adjustable_quantity: {
+            enabled: true,
+            minimum: 1,
+            maximum: 10,
+          },
           quantity: 1,
         },
       ],
