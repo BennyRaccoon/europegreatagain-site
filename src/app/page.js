@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Script from 'next/script'
 
 const images = [
   "/char/isabel.png",
@@ -196,6 +197,7 @@ export default function Home() {
           © 2025 The Bun Cult. All Rights Reserved.
         </p>
       </footer>
+      <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
     </div >
   );
 }

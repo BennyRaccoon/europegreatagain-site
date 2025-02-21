@@ -1,6 +1,8 @@
 import { EB_Garamond, Lexend } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
+import Script from 'next/script'
+
 
 const ebGaramond = EB_Garamond({
   subsets: ["latin"],
@@ -65,6 +67,7 @@ export default function RootLayout({ children }) {
       <body className={ebGaramond.variable}>
         {children}
       </body>
+      <Script src="https://scripts.simpleanalyticscdn.com/latest.js"  />
     </html>
   );
 }
