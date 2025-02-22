@@ -119,6 +119,7 @@ export default function Home() {
             "@context": "https://schema.org/",
             "@type": "Product",
             "name": "MEGA Hat",
+            "description": "Official MEGA hat, get yours and spread freedom and togetherness!",
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "5",
@@ -127,21 +128,29 @@ export default function Home() {
             "review": [
               {
                 "@type": "Review",
-                "author": "Valdemart",
                 "reviewRating": {
                   "@type": "Rating",
-                  "ratingValue": "5"
+                  "ratingValue": "5",
+                  "bestRating": 5
                 },
+                "author": {
+                  "@type": "Person",
+                  "name": "Valdemar"
+                }
                 "reviewBody": "Hat fits perfect the small strap in the back makes adjusting it for my kids easy.  Seems to be of good quality, used it a few weeks and no signs of wear."
               },
               {
                 "@type": "Review",
-                "author": "Dan",
                 "reviewRating": {
                   "@type": "Rating",
-                  "ratingValue": "5"
+                  "ratingValue": "5",
+                  "bestRating": 5
                 },
-                "reviewBody": "Good comfort and appearance + decent delivery time."
+                "author": {
+                  "@type": "Dan",
+                  "name": "Valdemart"
+                }
+                "reviewBody": "Good comfort and appearance + decent delivery time."
               }
             ]
           }
@@ -149,7 +158,7 @@ export default function Home() {
         </script>
         <div className="reviews">
           <div className="neon-pink-box">
-            <h3 >Valdemart</h3>
+            <h3 >Valdemar</h3>
             <p>⭐⭐⭐⭐⭐</p>
             <p>"Hat fits perfect the small strap in the back makes adjusting it for my kids easy.  Seems to be of good quality, used it a few weeks and no signs of wear."</p>
           </div>
