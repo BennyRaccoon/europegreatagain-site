@@ -147,8 +147,8 @@ export default function Home() {
                   "bestRating": 5
                 },
                 "author": {
-                  "@type": "Dan",
-                  "name": "Valdemart"
+                  "@type": "Person",
+                  "name": "Dan"
                 }
                 "reviewBody": "Good comfort and appearance + decent delivery time."
               }
