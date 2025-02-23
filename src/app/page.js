@@ -115,45 +115,45 @@ export default function Home() {
         <h2>Customer Reviews</h2>
         <script type="application/ld+json">
           {`
-          {
-            "@context": "https://schema.org/",
-            "@type": "Product",
-            "name": "MEGA Hat",
-            "description": "Official MEGA hat, get yours and spread freedom and togetherness!",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "5",
-              "reviewCount": "2"
-            },
-            "review": [
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": 5
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Valdemar"
-                }
-                "reviewBody": "Hat fits perfect the small strap in the back makes adjusting it for my kids easy.  Seems to be of good quality, used it a few weeks and no signs of wear."
+            {
+              "@context": "https://schema.org/",
+              "@type": "Product",
+              "name": "MEGA Hat",
+              "description": "Official MEGA hat, get yours and spread freedom and togetherness!",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "2"
               },
-              {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": 5
+              "review": [
+                {
+                  "@type": "Review",
+                  "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": 5
+                  },
+                  "author": {
+                    "@type": "Person",
+                    "name": "Valdemar"
+                  },
+                  "reviewBody": "Hat fits perfect the small strap in the back makes adjusting it for my kids easy.  Seems to be of good quality, used it a few weeks and no signs of wear."
                 },
-                "author": {
-                  "@type": "Person",
-                  "name": "Dan"
+                {
+                  "@type": "Review",
+                  "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": 5
+                  },
+                  "author": {
+                    "@type": "Person",
+                    "name": "Dan"
+                  },
+                  "reviewBody": "Good comfort and appearance + decent delivery time."
                 }
-                "reviewBody": "Good comfort and appearance + decent delivery time."
-              }
-            ]
-          }
+              ]
+            }
           `}
         </script>
         <div className="reviews">
